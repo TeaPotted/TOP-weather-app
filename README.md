@@ -1,2 +1,3 @@
-# webpack-template
-template for webpack
+# Weather App
+
+The Odin Project's Weather App project
