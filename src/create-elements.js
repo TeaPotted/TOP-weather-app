@@ -61,4 +61,20 @@ function createMaxTempDiv(maxTemp) {
   return div;
 };
 
-export { createElem, createDateDiv, createIconImg, createTemperatureDiv, createMaxTempDiv };
+// function for displaying the tempmin temperature
+function createMinTempDiv(minTemp) {
+  // div to keep all the p elements for the "low" text, min temperature and scale
+  const div = createElem("div", "temp-min-div", "");
+  const lowP = createElem("p", "low", "Low");
+
+  // keep the temperature and measurement scale in a div
+  const tempDiv = createElem("div", "tempDiv", "");
+  const temperature = createElem("p", "temperature", minTemp);
+  const scale = createElem("p", "scale", "°C");
+
+  tempDiv.append(temperature, scale)
+  div.append(lowP, tempDiv);
+  return div;
+};
+
+export { createElem, createDateDiv, createIconImg, createTemperatureDiv, createMaxTempDiv, createMinTempDiv };
