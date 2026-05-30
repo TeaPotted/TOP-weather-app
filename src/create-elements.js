@@ -19,4 +19,20 @@ function createDateDiv(date) {
   return div;
 }
 
-export { createElem, createDateDiv };
+// function that creates an img and set's it src to the day's icon
+function createIconImg(icon) {
+  // import the icon's image
+  return import(`./images/${icon}.png`)
+    .then((response) => {
+      // create an img element and use the imported image as the src
+      const iconImg = document.createElement("img");
+      iconImg.setAttribute("src", response.default); // set the src to response's default property as that is where the url is stored
+      iconImg.alt = icon;
+      return iconImg;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+export { createElem, createDateDiv, createIconImg };
