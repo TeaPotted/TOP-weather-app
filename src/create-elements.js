@@ -35,4 +35,14 @@ function createIconImg(icon) {
     });
 }
 
-export { createElem, createDateDiv, createIconImg };
+// function for displaying the temperature and it's measurement scale
+function createTemperatureDiv(temp) {
+  // div to keep paragraphs of the temperature and the measurement scale
+  const div = createElem("div", "tempDiv", "");
+  const temperature = createElem("p", "temperature", temp);
+  const scale = createElem("p", "scale", "°C");
+  div.append(temperature, scale);
+  return div;
+}
+
+export { createElem, createDateDiv, createIconImg, createTemperatureDiv };
