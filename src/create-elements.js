@@ -45,4 +45,20 @@ function createTemperatureDiv(temp) {
   return div;
 }
 
-export { createElem, createDateDiv, createIconImg, createTemperatureDiv };
+// function for displaying the tempmax temperature
+function createMaxTempDiv(maxTemp) {
+  // div to keep all the p elements for the "high" text, max temperature and scale
+  const div = createElem("div", "temp-max-div", "");
+  const highP = createElem("p", "high", "High");
+
+  // keep the temperature and measurement scale in a div
+  const tempDiv = createElem("div", "tempDiv", "");
+  const temperature = createElem("p", "temperature", maxTemp);
+  const scale = createElem("p", "scale", "°C");
+
+  tempDiv.append(temperature, scale)
+  div.append(highP, tempDiv);
+  return div;
+};
+
+export { createElem, createDateDiv, createIconImg, createTemperatureDiv, createMaxTempDiv };
