@@ -9,7 +9,7 @@ import {
 
 // function for displaying the information of a day
 function displayDay(day) {
-  const dayDiv = createElem("div", "day", "");
+  const dayDiv = createElem("div", "day-div", "");
   for (const info in day) {
     switch (info) {
       case "datetime":
