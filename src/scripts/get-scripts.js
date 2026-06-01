@@ -22,11 +22,11 @@ function getTownData() {
         //additional error information
         errorResponse.text().then((errorMessage) => {
           //errorMessage now returns the response body which includes the full error message
-          console.log(errorMessage);
+          return errorMessage;
         });
       } else {
         //no additional error information
-        console.log(errorResponse);
+        return errorResponse;
       }
     });
 }

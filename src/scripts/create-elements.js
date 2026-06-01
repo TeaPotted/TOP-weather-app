@@ -22,7 +22,7 @@ function createDateDiv(date) {
 // function that creates an img and set's it src to the day's icon
 function createIconImg(icon) {
   // import the icon's image
-  return import(`./images/${icon}.png`)
+  return import(`../images/${icon}.png`)
     .then((response) => {
       // create an img element and use the imported image as the src
       const iconImg = document.createElement("img");

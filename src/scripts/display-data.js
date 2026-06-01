@@ -1,3 +1,4 @@
+import { getTownData } from "./get-scripts.js";
 import {
   createElem,
   createDateDiv,
@@ -41,3 +42,16 @@ function displayDay(day) {
   }
   return dayDiv;
 }
+
+// function for displaying all days
+function displayDays() {
+  // after days loads, append all
+  const days = getTownData();
+  days.then((response) => {
+    for (const day of response.days) {
+      document.querySelector(".display-weather").append(displayDay(day));
+    }
+  });
+}
+
+export { displayDays };
