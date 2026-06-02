@@ -8,6 +8,8 @@ import {
   createMinTempDiv,
 } from "./create-elements.js";
 
+const displayWeatherDiv = document.querySelector("div.display-weather");
+
 // function for displaying the information of a day
 function displayDay(day) {
   const dayDiv = createElem("div", "day-div", "");
@@ -45,13 +47,21 @@ function displayDay(day) {
 
 // function for displaying all days
 function displayDays() {
-  // after days loads, append all
   const days = getTownData();
-  days.then((response) => {
-    for (const day of response.days) {
-      document.querySelector(".display-weather").append(displayDay(day));
-    }
-  });
+  days
+    .then((response) => {
+      // if there is no days property in response, throw the response and handle it in catch
+      if (!response.days) throw response;
+
+      // else, display each day
+      for (const day of response.days) {
+        displayWeatherDiv.append(displayDay(day));
+      }
+    })
+    .catch((error) => {
+      // display the error message
+      displayWeatherDiv.append(createElem("p", "error", error));
+    });
 }
 
 export { displayDays };
