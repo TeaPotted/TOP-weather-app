@@ -45,7 +45,7 @@ function createTemperatureDiv(temp) {
   return div;
 }
 
-// function for displaying the tempmax temperature
+// function for creating a div for tempmax
 function createMaxTempDiv(maxTemp) {
   // div to keep all the p elements for the "high" text, max temperature and scale
   const div = createElem("div", "temp-max-div", "");
@@ -61,7 +61,7 @@ function createMaxTempDiv(maxTemp) {
   return div;
 };
 
-// function for displaying the tempmin temperature
+// function for creating a div for tempmin
 function createMinTempDiv(minTemp) {
   // div to keep all the p elements for the "low" text, min temperature and scale
   const div = createElem("div", "temp-min-div", "");
