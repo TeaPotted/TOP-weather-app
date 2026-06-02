@@ -47,6 +47,11 @@ function displayDay(day) {
 
 // function for displaying all days
 function displayDays() {
+  // if displayWeatherDiv is not empty, reset it's textContent
+  if (displayWeatherDiv.textContent !== "") {
+    displayWeatherDiv.textContent = "";
+  }
+  
   const days = getTownData();
   days
     .then((response) => {
