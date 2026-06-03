@@ -77,6 +77,26 @@ function createMinTempDiv(minTemp) {
   return div;
 }
 
+// function for creating a div for day's sunrise
+function createSunriseDiv(sunrise) {
+  // div to keep all the p elements for "Sunrise" text and sunrise time
+  const div = createElem("div", "sunrise", "");
+  const p = createElem("p", "", "Sunrise:");
+  const sunriseTime = createElem("p", "time", sunrise);
+  div.append(p, sunriseTime);
+  return div;
+}
+
+// function for creating a div for day's sunset
+function createSunsetDiv(sunset) {
+  // div to keep all the p elements for "Sunset" text and sunset time
+  const div = createElem("div", "sunset", "");
+  const p = createElem("p", "", "Sunset:");
+  const sunsetTime = createElem("p", "time", sunset);
+  div.append(p, sunsetTime);
+  return div;
+}
+
 export {
   createElem,
   createDateDiv,
@@ -84,4 +104,6 @@ export {
   createTemperatureDiv,
   createMaxTempDiv,
   createMinTempDiv,
+  createSunriseDiv,
+  createSunsetDiv,
 };
