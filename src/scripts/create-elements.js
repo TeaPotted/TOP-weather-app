@@ -47,34 +47,41 @@ function createTemperatureDiv(temp) {
 
 // function for creating a div for tempmax
 function createMaxTempDiv(maxTemp) {
-  // div to keep all the p elements for the "high" text, max temperature and scale
+  // div to keep all the p elements for the "high:" text, max temperature and scale
   const div = createElem("div", "temp-max-div", "");
-  const highP = createElem("p", "high", "High");
+  const highP = createElem("p", "high", "High:");
 
   // keep the temperature and measurement scale in a div
   const tempDiv = createElem("div", "tempDiv", "");
   const temperature = createElem("p", "temperature", maxTemp);
   const scale = createElem("p", "scale", "°C");
 
-  tempDiv.append(temperature, scale)
+  tempDiv.append(temperature, scale);
   div.append(highP, tempDiv);
   return div;
-};
+}
 
 // function for creating a div for tempmin
 function createMinTempDiv(minTemp) {
-  // div to keep all the p elements for the "low" text, min temperature and scale
+  // div to keep all the p elements for the "low:" text, min temperature and scale
   const div = createElem("div", "temp-min-div", "");
-  const lowP = createElem("p", "low", "Low");
+  const lowP = createElem("p", "low", "Low:");
 
   // keep the temperature and measurement scale in a div
   const tempDiv = createElem("div", "tempDiv", "");
   const temperature = createElem("p", "temperature", minTemp);
   const scale = createElem("p", "scale", "°C");
 
-  tempDiv.append(temperature, scale)
+  tempDiv.append(temperature, scale);
   div.append(lowP, tempDiv);
   return div;
-};
+}
 
-export { createElem, createDateDiv, createIconImg, createTemperatureDiv, createMaxTempDiv, createMinTempDiv };
+export {
+  createElem,
+  createDateDiv,
+  createIconImg,
+  createTemperatureDiv,
+  createMaxTempDiv,
+  createMinTempDiv,
+};
