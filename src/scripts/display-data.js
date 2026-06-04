@@ -105,6 +105,7 @@ function displayDays(scale) {
     displayWeatherDiv.textContent = "";
   }
 
+  const daysDiv = createElem("div", "days", ""); // for keeping all the day divs
   const days = getLocationData(scale);
   days
     .then((response) => {
@@ -113,8 +114,18 @@ function displayDays(scale) {
 
       // else, display each day
       for (const day of response.days) {
-        displayWeatherDiv.append(displayDay(day));
+        daysDiv.append(displayDay(day));
       }
+
+      // append a h3 for displaying the location's name and daysDiv
+      displayWeatherDiv.append(
+        createElem(
+          "h3",
+          "location",
+          response.address[0].toUpperCase() + response.address.slice(1), // capitalize the first letter of location's name
+        ),
+        daysDiv,
+      );
     })
     .catch((error) => {
       // display the error message
