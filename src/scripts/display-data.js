@@ -99,13 +99,13 @@ function displayDay(day) {
 }
 
 // function for displaying all days
-function displayDays() {
+function displayDays(scale) {
   // if displayWeatherDiv is not empty, reset it's textContent
   if (displayWeatherDiv.textContent !== "") {
     displayWeatherDiv.textContent = "";
   }
 
-  const days = getLocationData();
+  const days = getLocationData(scale);
   days
     .then((response) => {
       // if there is no days property in response, throw the response and handle it in catch
