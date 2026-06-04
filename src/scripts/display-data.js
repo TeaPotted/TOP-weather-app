@@ -1,4 +1,4 @@
-import { getTownData } from "./get-scripts.js";
+import { getLocationData } from "./get-scripts.js";
 import { format } from "date-fns";
 import {
   createElem,
@@ -105,7 +105,7 @@ function displayDays() {
     displayWeatherDiv.textContent = "";
   }
 
-  const days = getTownData();
+  const days = getLocationData();
   days
     .then((response) => {
       // if there is no days property in response, throw the response and handle it in catch

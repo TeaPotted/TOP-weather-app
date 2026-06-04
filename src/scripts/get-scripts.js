@@ -1,7 +1,7 @@
 const town = document.getElementById("town"); // get the input#town element
 
 // function for fetching town data
-function getTownData() {
+function getLocationData() {
   // fetch town data
   return fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${town.value}?unitGroup=metric&include=days&key=P49UUD9RB3YB5FDWBCBR2GAH9`,
@@ -22,4 +22,4 @@ function getTownData() {
     });
 }
 
-export { getTownData };
+export { getLocationData };
