@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import {getScaleText} from "./get-scripts.js"
 
 // function for creating an element
 function createElem(elem, cls, textContent) {
@@ -40,7 +41,7 @@ function createTemperatureDiv(temp) {
   // div to keep paragraphs of the temperature and the measurement scale
   const div = createElem("div", "tempDiv", "");
   const temperature = createElem("p", "temperature", temp);
-  const scale = createElem("p", "scale", "°C");
+  const scale = createElem("p", "scale", getScaleText());
   div.append(temperature, scale);
   return div;
 }
@@ -54,7 +55,7 @@ function createMaxTempDiv(maxTemp) {
   // keep the temperature and measurement scale in a div
   const tempDiv = createElem("div", "tempDiv", "");
   const temperature = createElem("p", "temperature", maxTemp);
-  const scale = createElem("p", "scale", "°C");
+  const scale = createElem("p", "scale", getScaleText());
 
   tempDiv.append(temperature, scale);
   div.append(highP, tempDiv);
@@ -70,7 +71,7 @@ function createMinTempDiv(minTemp) {
   // keep the temperature and measurement scale in a div
   const tempDiv = createElem("div", "tempDiv", "");
   const temperature = createElem("p", "temperature", minTemp);
-  const scale = createElem("p", "scale", "°C");
+  const scale = createElem("p", "scale", getScaleText());
 
   tempDiv.append(temperature, scale);
   div.append(lowP, tempDiv);
