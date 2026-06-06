@@ -84,7 +84,11 @@ function displayDay(day) {
     );
   });
   // when dayDiv is clicked, call displayFullDay using day
-  dayDiv.addEventListener("click", () => displayFullDay(day));
+  dayDiv.addEventListener("click", () => {
+    displayFullDay(day);
+    // automatically scroll to the bottom of the window page
+    window.scrollTo(0, document.body.scrollHeight);
+  });
   return dayDiv;
 }
 
