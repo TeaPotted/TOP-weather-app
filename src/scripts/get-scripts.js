@@ -29,4 +29,10 @@ function getScale() {
   return scale.textContent === "°C" ? "metric" : "us";
 }
 
-export { getLocationData, getScale };
+// function for getting the textContent of #scale
+function getScaleText() {
+  const scale = document.querySelector("#scale");
+  return scale.textContent;
+}
+
+export { getLocationData, getScale, getScaleText };
