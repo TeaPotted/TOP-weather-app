@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+<script defer src="main.js"></script></head>
+
+<body>
+  <h1>Weather App</h1>
+  <form novalidate>
+    <div class="input-container">
+      <input type="text" id="location" name="location" placeholder="Enter a town" required>
+      <button id="search-btn">Search</button>
+    </div>
+  </form>
+
+  <div class="container">
+    <p>Current scale: <span id="scale">°C</span></p>
+    <button id="change-scale">Change to °F</button>
+  </div>
+
+  <div class="display-weather">
+  </div>
+</body>
+
+</html>
