@@ -22,4 +22,11 @@ function getLocationData(scale) {
     });
 }
 
-export { getLocationData };
+// function that returns either "metric" or "us" based on #scale
+function getScale() {
+  const scale = document.querySelector("#scale");
+  // if scale's textContent is "°C" return "metric" else return "us"
+  return scale.textContent === "°C" ? "metric" : "us";
+}
+
+export { getLocationData, getScale };
