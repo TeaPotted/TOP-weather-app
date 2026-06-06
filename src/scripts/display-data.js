@@ -64,36 +64,26 @@ function displayFullDay(day) {
 
 // function for displaying the information of a day
 function displayDay(day) {
+  // div to keep all the info
   const dayDiv = createElem("div", "day-div", "");
-  for (const info in day) {
-    switch (info) {
-      case "datetime":
-        dayDiv.append(createDateDiv(day[info]));
-        break;
+  // div to keep the min and max tempertaure divs
+  const minAndMaxTemps = createElem("div", "temperatures", "");
+  minAndMaxTemps.append(
+    createMaxTempDiv(day.tempmax),
+    createMinTempDiv(day.tempmin),
+  );
 
-      case "icon": {
-        const iconImg = createIconImg(day[info]);
-        iconImg.then((response) => {
-          dayDiv.append(response);
-        });
-        break;
-      }
-
-      case "temp":
-        dayDiv.append(createTemperatureDiv(day[info]));
-        break;
-      case "tempmin":
-        dayDiv.append(createMinTempDiv(day[info]));
-        break;
-
-      case "tempmax":
-        dayDiv.append(createMaxTempDiv(day[info]));
-        break;
-
-      default:
-        break;
-    }
-  }
+  const iconImg = createIconImg(day.icon);
+  // when iconImg loads, append a date div, the icon img temperature div and min and max temperatures div
+  iconImg.then((response) => {
+    dayDiv.append(
+      createDateDiv(day.datetime),
+      response,
+      createTemperatureDiv(day.temp),
+      minAndMaxTemps,
+    );
+  });
+  // when dayDiv is clicked, call displayFullDay using day
   dayDiv.addEventListener("click", () => displayFullDay(day));
   return dayDiv;
 }
@@ -107,7 +97,7 @@ function displayDays(scale) {
 
   // if there div.full-day-div exists, remove it from body
   if (document.body.querySelector("div.full-day-div")) {
-    document.body.removeChild(document.body.querySelector("div.full-day-div"))
+    document.body.removeChild(document.body.querySelector("div.full-day-div"));
   }
 
   const daysDiv = createElem("div", "days", ""); // for keeping all the day divs
