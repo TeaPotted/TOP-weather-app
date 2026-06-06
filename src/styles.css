@@ -224,3 +224,9 @@ h1 {
   text-align: center;
   font-size: 1.2em;
 }
+
+.error {
+  margin-top: 50px;
+  text-align: center;
+  color: maroon;
+}
