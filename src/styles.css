@@ -115,7 +115,7 @@ h1 {
   color: grey;
 }
 
-img {
+.day-div img {
   min-width: 64px;
   max-width: 64px;
 }
@@ -144,4 +144,83 @@ img {
 .temp-max-div, .temp-min-div {
   display: flex;
   gap: 3px;
+}
+
+.full-day-div {
+  margin: 10px;
+  border: 1px solid;
+  min-width: 50vw;
+  max-width: 50vw;
+  padding: 10px;
+  font-size: 18px;
+  display: grid;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.full-day-div .dateDiv {
+  justify-items: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.full-day-div .day {
+  font-weight: bold;
+}
+
+.full-day-div .date {
+  color: grey;
+  font-size: 0.7em;
+}
+
+.full-day-div .temp-and-icon {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 10px;
+}
+
+.full-day-div .temp-and-icon .tempDiv {
+  font-size: 1.9em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.full-day-div .temp-and-icon img {
+  width: 80px;
+}
+
+.full-day-div .temperatures-and-suntimes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.full-day-div .temperatures, .sun-times {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.full-day-div .temp-max-div, .temp-min-div, .sunrise, .sunset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.full-day-div .tempDiv, .sunrise .time, .sunset .time {
+  font-weight: bold;
+}
+
+.full-day-div .description {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
 }
