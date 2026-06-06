@@ -105,6 +105,11 @@ function displayDays(scale) {
     displayWeatherDiv.textContent = "";
   }
 
+  // if there div.full-day-div exists, remove it from body
+  if (document.body.querySelector("div.full-day-div")) {
+    document.body.removeChild(document.body.querySelector("div.full-day-div"))
+  }
+
   const daysDiv = createElem("div", "days", ""); // for keeping all the day divs
   const days = getLocationData(scale);
   days
